@@ -1,0 +1,1156 @@
+@import "./variables";
+@import "./colors";
+@import "./mixins";
+
+html, body {
+    @include standardSettings();
+}
+
+body {
+    margin: auto;
+    width: 100%;
+    background: black;
+
+    @include desktop {
+        width: 1120px; 
+    }
+
+    header {
+
+    section {
+        background-color: bg-color(gray);
+        height: 400px;
+        overflow: hidden;
+        border-bottom: 2px solid bg-color(gray);
+
+        @include wide-mobile {
+            height: 470px;
+        }
+
+        @include small-tablet {
+            height: 520px;
+        }
+
+        @include tablet {
+            height: 500px;
+        }
+
+        @include desktop {
+            height: 530px;
+        }
+
+        nav 
+        { 
+            margin: auto;
+            width: 100%;
+
+            div a {
+                margin: auto auto auto 10px;
+                
+                width: 100px;
+
+                @include mobile {
+                    width: 150px;
+                }
+
+                #wireland-logo-1 {
+                    width: 100px;
+                    
+                    @include mobile {
+                        width: 150px;
+                    }
+
+                }
+            }
+            
+            .d-flex {
+                display: flex;
+                justify-content: center;
+
+                @include tablet {
+                    width: 400px;
+                }
+                
+                div {
+                    
+                    i {
+                        display: none;
+                    }
+
+                    p {
+                        display: none;
+                    }
+
+                    @include tablet {
+                        display: flex;
+                        margin: 20px auto auto auto;
+                        justify-content: center;
+                        font-size: 0.7rem;
+                        font-weight: 500;
+                        color: text-color(blue);
+
+                        i {
+                            display: block;
+                            margin: 10px 15px 0 0;
+                            
+                        }
+
+                        p {
+                            display: block;
+                            margin-top: 5px;
+                        }
+                    }
+                    
+                }
+
+                div {
+
+                    .btn {
+                        @include buttonStyling();
+                        background-color: bg-color(blue);
+                        height: 30px;
+                        width: 100px;
+                        border-radius: 0;
+                        
+                    }
+                    
+                }
+                
+            }
+        }   
+
+        .jumbrotron {
+
+            .container {
+                width: 100vw;
+                color: text-color(blue);
+
+                .a-nice-headline {
+                    padding-top: 13px;
+                    font-size: 2rem;
+                    font-weight: 550;
+
+                    @include wide-mobile {
+                        font-size: 2.3rem;
+                    }
+                    
+                }
+
+                p {
+                    font-size: 0.65rem;
+                    font-weight: 500;
+
+                    @include tablet {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                img {
+                    width: 250px;
+                    height: auto;
+                    margin: 0 auto;
+
+                    @include mobile {
+                        width: 300px;
+                        padding: 10px 0 0 0;
+                    }
+
+                    @include wide-mobile {
+                        padding: 20px 0 0 0;
+                        width: 400px;
+                    }
+            
+                    @include small-tablet {
+                        width: 500px;
+                    }
+            
+                    @include tablet {
+                        width: 570px;
+                    }
+            
+                    @include desktop {
+                        width: 600px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    }   
+    main {
+        
+        .announcement {
+            height: 300px;
+            background-color: white;
+            border-bottom: 2px solid bg-color(gray);
+
+            @include wide-mobile {
+                height: 250px;
+            }
+
+            @include small-tablet {
+                height: 220px;
+            }
+
+            @include tablet {
+                height: 160px;
+            }
+
+            .jumbotron {
+                background-color: bg-color(white);
+                display: flex;
+                background: transparent;
+                color: text-color(blue);
+                height: 160px;
+                width: 90%;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                padding-top: 90px;
+
+                @include tablet {
+                    height: 160px;
+                }
+
+                .container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    height: 150px;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    @include mobile {
+                        width: 300px;
+                    }
+                    @include tablet {
+                        flex-wrap: nowrap;
+                        width: 600px;
+                    }
+
+                    .announcement-headline {
+                        @include headlines();
+                        text-align: center;
+
+                        @include tablet {
+                            text-align: right;
+                            font-size: 1.1rem;
+                            width: 200px;
+                            margin-right: 20px;
+                        }
+                    }
+
+                    p {
+                        font-size: 0.6rem;
+                        font-weight: 550;
+                        text-align: center;
+                        
+                        @include tablet {
+                            text-align: left;
+                            width: 400px;
+                            font-weight: 500;
+                            padding-top: 10px;
+                        }
+
+                    }
+                    
+                }
+            }
+        }
+        
+        #how-it-works {
+            color: text-color(blue);
+            text-align: center;
+            background: white;
+            border: white solid;
+
+            .jumbotron {
+                @include jumbotronSettings();
+
+                #how-it-works-text {
+                    padding-bottom: 30px;
+                    
+                    h1 {
+                        @include headlines();
+                    }
+                }
+
+                .media-player-img {
+                    img{
+                        width: 250px;
+                        padding-bottom: 20px;
+
+                        @include wide-mobile {
+                            width: 350px;
+                        }
+
+                        @include small-tablet {
+                            width: 400px;
+                        }
+
+                        @include tablet {
+                            width: 500px;
+                            padding-bottom: 50px;
+                        }
+
+                        @include desktop {
+                            width: 700px;
+                        }
+
+                    }
+                    
+                }
+
+                .container {
+                    width: 70%;
+                    
+                    @include desktop {
+                        display: flex;
+                    }
+
+                    .step {
+
+                        @include desktop {
+                            width: 380px;
+                        }
+
+                        .step-img {
+                            @include smallPictures();
+                            filter: brightness(110%);
+
+                        }
+
+                        @include smallText();
+                    }
+
+                    .arrow-logo {
+                        padding-bottom: 20px;
+                        margin: auto;
+
+                        @include desktop {
+                            margin: 5px auto;
+                        }
+
+                        i {
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        #benefits {
+            color: text-color(blue);
+            text-align: center;
+            background: white;
+            border: white solid;
+            
+            .jumbotron {
+                @include jumbotronSettings();
+
+                .benefits-text {
+                    padding-bottom: 10px;
+
+                    #benefits-headline {
+                        font-size: 1.5rem;
+                        width: 250px;
+                        padding-bottom: 30px;
+
+                        @include tablet {
+                            width: 500px;
+                        }
+                    }
+                }
+
+                .container {
+                    width: 80%;
+                    
+                    .info-benefits {
+
+                        @include tablet {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        
+                        .info-text1 {
+                            font-weight: 600;
+                            font-size: 0.9rem;
+
+                            @include tablet {
+                                width: 250px;
+                                padding-right: 20px;
+                                text-align: right;
+                                
+                            }
+                        }
+
+                        .benefits-image{
+                            
+                            img {
+                                width: 120px;
+                                height: 120px;
+                                padding-bottom: 10px;
+                            }
+                        }
+
+                        .info-text2 {
+                            font-size: 0.6rem;
+                            font-weight: 500;
+                            padding-bottom: 20px;
+
+                            @include tablet {
+                                padding-top: 20px;
+                                width: 250px;
+                                display: inline-block;
+                                padding-left: 20px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #features {
+            color: text-color(blue);
+            text-align: center;
+            
+            .jumbrotron {
+                @include jumbotronSettings();
+                
+                #features-headline {
+                    
+                    h1 {
+                        @include headlines();
+                        margin-bottom: 30px;
+
+                        @include desktop {
+                            margin-bottom: 60px;
+                        }
+                    }
+                }
+
+                .container {
+                    
+                    @include desktop {
+                        width: 80%;
+                        display: grid;
+                        grid-column-gap: 30px;
+                        grid-template-columns: 50% 30%;
+                        margin-bottom: 60px;
+                        overflow: hidden;
+                    }
+                    
+                    #info-features {
+                        width: 90%;
+                        margin: auto;
+                        
+                        @include tablet {
+                            margin-bottom: 20px;
+                        }
+
+                        @include desktop {
+                            display: grid;
+                            grid-template-columns: 50% 50%;
+                            grid-column-gap: 50px;
+                        }
+
+                        .feature {
+                            
+                            @include smallText();
+
+                            img{
+                                @include smallPictures();
+
+                                @include tablet {
+                                    width: 30px;
+                                }
+                            }
+
+                            h1{
+                                font-size: 0.8rem;
+                                font-weight: 700;
+                            }
+                            
+                            p {
+                                font-size: 0.6rem;
+                                font-weight: 500;
+                            }
+
+                        }
+
+                        @include wide-desktop {
+                            #feature1 {
+                                @include features();
+                                margin-top: 20px;
+                            }
+
+                            #feature2 {
+                                @include features();
+                                margin-top: 20px;
+                            }
+
+                            #feature3 {
+                                @include features();
+                            }
+
+                            #feature4 {
+                                @include features();
+                            }
+
+                            #feature5 {
+                                @include features();
+                                margin-bottom: 30px;
+                            }
+
+                            #feature6 {
+                                @include features();
+                                margin-bottom: 30px;
+                            }
+                        }
+                    }
+
+                    #laptop-img {
+                        display: none;
+
+                        @include desktop {
+                            display: block;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        #testimonials {
+            color: text-color(blue);
+            text-align: center;
+
+            .jumbrotron {
+                @include jumbotronSettings();
+
+                #testimonials-headline {
+
+                    h1 {
+                        @include headlines();
+                        margin-top: 30px;
+
+                        @include desktop {
+                            margin-bottom: 60px;
+                        }
+                    }
+                }
+
+                .container {
+                    @include desktop {
+                        width: 60%;
+                        height: 330px;
+                        margin: auto;
+                        display: flex;
+                        
+                    }
+                    #quote-info1 {       
+                        @include desktop {
+                        margin: 0 20px 20px 0;
+                        height: 250px;
+                        display: grid;
+                        grid-template-columns: 4;
+                        grid-template-rows: 5;
+                        }
+
+                        #quote-image {
+                            font-size: 1.2rem;
+                            color: bg-color(gray);
+                            @include desktop {
+                                font-size: 2rem;
+                                text-align: left;
+                                grid-row: 1;
+                                grid-column: 1;
+                            }
+                        }
+
+                        #quote-text {
+                            font-style: italic;
+                            @include smallText();
+
+                            @include desktop {
+                                font-size: 2rem;
+                                grid-column: 1;
+                                grid-row: 2;
+                                text-align: left;
+                                width: 300px;
+                            }
+                            
+                        }
+
+                        #quote-author {
+                            @include desktop {
+                                grid-row: 3;
+                                grid-column: 1/-1;
+                                display: flex;
+                            }
+
+                            h3 {
+                                margin-top: -5px;
+                                font-size: 1rem;
+                            }
+
+                            p {
+                                margin-top: -10px;
+                                font-size: 0.7rem;
+                                font-weight: 200;
+
+                                @include desktop {
+                                    margin: 20px 0 0 -90px;
+
+                                }
+                                
+                            }
+
+                            #arrow-buttons {
+                                display: flex;
+                                justify-content: center;
+
+
+                                @include desktop {
+                                    width: 150px;
+                                    padding-left: 90px;
+                                }
+
+                                i {
+                                    border: 1px solid;
+                                    width: 25px;
+                                    height: 22px;
+                                    margin-bottom: 25px;
+                                }
+                            }
+                        }
+                    }
+
+                    #quote-info2 {
+                        #quote-author-image {
+                            #profile-picture {
+                                display: none;
+
+
+                                @include desktop {
+                                    display: block;
+                                    margin: 40px 0 0 0;
+                                    height: 220px;
+                                    width: 210px;
+                                    outline: 4px solid bg-color(gray);
+                                    outline-offset: -4px;
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        #news-section {
+            color: text-color(blue);
+            text-align: center;
+            background: white;
+            border: white solid;
+
+            .jumbotron {
+                @include jumbotronSettings();
+
+                .container {
+                    
+                    #news-headline {
+                        
+                        h1 {
+                            @include headlines();
+                            margin: auto;
+                        }
+                    }
+
+                    #newspapers-container {
+                        width: 80%;
+                        margin: auto;
+
+                        @include small-tablet {
+                            display: flex;
+                            margin-top: 25px;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+
+                        @include desktop {
+                            width: 80%;
+                        }
+                        
+                        .newspapers {
+
+                            img {
+                                width: 150px;
+                                height: 100px;
+                            }
+
+                            p {
+                                margin-top: -30px;
+                                font-size: 0.7rem;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #choose-your-plan-section {
+            color: text-color(blue);
+            text-align: center;
+            background: white;
+            border: white solid;
+
+            .jumbotron {
+                @include jumbotronSettings();
+                border-bottom: none;
+                
+                .container {
+                    
+                    #choose-your-plan-headline {
+                        h1 {
+                            @include headlines();
+                            margin: -30px auto 60px auto;
+
+                        }
+                    }
+
+                    .choose-your-plan-container {
+                        margin: auto;
+                        
+                        @include desktop {
+                            display: grid;
+                            grid-template-columns: 3;
+                            grid-template-rows: 1;
+                            justify-content: center;
+                            width: 900px;
+                        }
+
+                        #free-plan-1 {
+                            @include desktop {
+                                grid-column: 1;
+                                grid-row: 1;
+                                height: 480px;
+                                margin-left: 4px;
+                            }
+                        }
+
+                        #free-plan-2 {
+                            @include desktop {
+                                grid-column: 3;
+                                grid-row: 1;
+                                height: 480px;
+                                margin-right: 4px;
+                            }
+                        }
+
+                        .free-plan {
+                            width: 260px;
+                            margin: 30px auto;  
+                            padding-top: 50px;
+                            border: bg-color(blue) solid;
+
+                            @include desktop {
+                                width: 220px;
+                            }
+                           
+                            #monthly-text {
+                                color: lightgray;
+                                margin-top: -20px;
+                                font-size: 10px;
+                            }
+
+                            h2 {
+                                font-weight: 800;
+
+                                .fa-dollar-sign {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            #free-plan-list {
+                                margin-top: 50px;
+                                list-style-type: none;
+                                margin-bottom: 100px;
+
+                                li {
+                                    margin-top: -10px;
+                                    .fa-check-circle {
+                                        margin-right: 130px;
+                                    }
+
+                                    .fa-times-circle {
+                                        margin-right: 130px;
+                                    }
+
+                                    p {
+                                        margin: -30px 0 5px 0;
+                                    }
+
+                                }
+
+                                .line-inside-plan-list {
+                                    margin-top: -1px;
+                                    width: 90%;
+                                }
+
+                                .btn {
+                                    @include buttonStyling();
+                                    background-color: bg-color(blue);
+                                    margin-top: 40px;
+                                    margin-bottom: -100px;
+                                    width: 200px;
+                                    height: 40px;
+                                    border-radius: 0;
+
+                                    @include desktop {
+                                        width: 180px;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        #advanced-plan {
+                            width: 260px;
+                            height: 530px;
+                            margin: 30px auto;  
+                            padding-top: 50px;
+                            background-color: bg-color(blue);
+                            color: white;
+
+                            @include desktop {
+                                grid-column: 2;
+                                grid-row: 1;
+                                margin-top: -2.5px;
+                                width: 210px;
+                                
+                            }
+                            #advanced-text {
+                                margin-top: -20px;
+                                margin-bottom: -10px;
+                                font-size: 0.6rem;
+                                font-weight: 700;
+                                padding-bottom: -10px;
+                            }
+                            h2 {
+                                font-size: 2.5rem;
+                                font-weight: 650;
+
+                                .fa-dollar-sign {
+                                    color: lightgray;
+                                    font-size: 15px;
+                                    margin-right: 10px;
+                                }
+                            }
+
+                            #monthly-text {
+                                color: lightgray;
+                                margin-top: -15px;
+                                font-size: 10px;
+                            }
+
+                            #advanced-plan-list {
+                                margin-top: 50px;
+                                list-style-type: none;
+                                margin-bottom: 100px;
+
+                                li {
+                                    margin-top: -10px;
+                                    .fa-check-circle {
+                                        margin-left: -130px;
+                                    }
+
+                                    p {
+                                        margin-top: -30px;
+                                        margin-bottom: 5px;
+                                    }
+
+                                }
+
+                                .line-inside-plan-list {
+                                    margin-top: -1px;
+                                    width: 80%;
+                                    background: bg-color(white);
+                                }
+
+                                .btn {
+                                    
+                                    text-transform: uppercase;
+                                    font-size: 0.6rem;
+                                    margin-top: 100px;
+                                    
+                                    width: 200px;
+                                    height: 40px;
+                                    font-weight: 700;
+                                    border-radius: 0;
+                                    background-color: bg-color(gray);
+                                    color: bg-color(blue);
+
+                                    @include desktop {
+                                        width: 180px;
+                                    }
+                                }
+                            }
+                        
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #get-in-touch-section {
+        color: text-color(white);
+        justify-content: center;
+        margin-bottom: -41px;
+        
+        .jumbotron{
+            @include jumbotronSettings();
+            background-image: url(../images/background/map.png);
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 330px;
+
+            @include tablet {
+                background-image: url(../images/background/map-tablet.png);
+                height: 400px;
+                
+            }
+
+            @include desktop {
+                background-image: url(../images/background/map-desktop.png);
+                height: 450px;
+                margin: auto;
+                background-position: center;
+            }
+
+            .container {
+                background: bg-color(white);
+                color: text-color(blue);
+                height: 250px;  
+                width: 250px;
+                font-size: 0.7rem;
+                font-weight: 400;
+                
+                @include small-tablet {
+                    margin-right: 100px;
+                }
+
+                @include tablet {
+                    margin-left: 400px;
+                }
+
+                @include desktop {
+                    margin-left: 500px;
+                }
+
+                #get-in-touch-headline{
+                    font-size: 1.5rem;
+                    width: 200px;
+                    margin: auto;
+                    padding-bottom: 10px;
+                }
+
+                    #get-in-touch-info {
+                        margin: auto;
+
+                        #mail-container {
+                            @include info-containers();
+                        }
+                        #phone-container {
+                            @include info-containers();
+                        }
+                        #address-container {
+                            @include info-containers();
+                        }
+                    }
+            }
+
+        }
+        
+    }
+
+    #enter-email-section {
+        .jumbotron {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border-bottom: none;
+            background-color: bg-color(blue);
+            height: 360px;
+            
+            .container {
+                position: absolute;
+                text-align: center;
+
+                .d-flex {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                #wireland-logo {
+                    margin: auto;
+                    color: white;
+                    font-size: 1rem;
+
+                    .brand-border {
+                        font-weight: 300;
+                        border: 0.05em dotted;
+                        padding: 0 0.3em;
+                        position: relative;
+
+                        .corner-box {
+                            width: 0.20em;
+                            height: 0.20em;
+                            background-color: white;
+                            position: absolute;
+                        }
+
+                        .tl {
+                            top: 0;
+                            left: 0;
+                            transform: translate(-50%, -50%);
+                        }
+                        
+                        .tr {
+                            top: 0;
+                            right: 0;
+                            transform: translate(50%, -50%);
+                        }
+                        
+                        .bl {
+                            bottom: 0;
+                            left: 0;
+                            transform: translate(-50%, 50%);
+                        }
+                        
+                        .br {
+                            bottom: 0;
+                            right: 0;
+                            transform:translate(50%, 50%);
+                        }
+                        
+                        .brand-bold {
+                            font-weight: 700;
+                            margin-left: 0.5rem;
+                            margin-top: -2rem;
+                        }
+                    }
+                }
+
+                #info-text {
+                    width: 80%;
+                    margin: auto;
+                    margin-top: 30px;
+                    font-size: 0.7rem;
+                    font-weight: 400;
+                    color: bg-color(white);
+                    margin-bottom: 20px;
+                }
+
+                #form {
+                    display: grid;
+                    grid-template-columns: 4;
+                    grid-template-rows: 1;
+                    justify-content: center;
+
+                    @include tablet {
+                        margin: auto;
+                        width: 40%;
+                    }
+
+                    input {
+                        margin-top: 20px;
+                        height: 40px;
+                        margin: auto;
+                        grid-column: 1/4;
+                        grid-row: 1;
+
+                        @include tablet {
+                            width: 320px;
+                        }
+                    }
+
+                    @include placeholder {
+                        color: gray;
+                        font-weight:300;
+                        font-size: 0.9em;
+                    }
+
+                    #input-email-button {
+                        @include buttonStyling();
+                        background-color: bg-color(blue);
+                        grid-column: 2/4;
+                        grid-row: 1;
+                        width: 110px;
+                        height: 30px;
+                        border-radius: 5px;
+                        align-content: left;
+                        margin-right: 5px;
+                    }
+                }
+
+                #social-media-logos {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 30%;
+                    margin: auto;
+                    margin-top: 30px;
+                    color: white;
+
+                    @include tablet {        
+                        width: 15%;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        #footer-section {
+            height: 50px;
+            margin-top: -41px;
+            display: flex;
+            justify-content: center;
+            background-color:#006699;
+            
+            #footer-container {
+                display: flex;
+                justify-content: center;
+                
+                #copyright-text {
+                    @include smallText();
+                    
+                    width: 100%;
+                    margin: auto;
+                    font-size: 0.7rem;
+                    font-weight: 400;
+                    color: white;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+
+            
+
+    
+    
+
+

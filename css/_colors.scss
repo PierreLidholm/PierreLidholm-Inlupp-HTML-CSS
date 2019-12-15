@@ -1,0 +1,22 @@
+$myblue: rgb(61, 136, 181);
+$mygray: rgb(232, 239, 247);
+$mywhite: #fff;
+
+$bg-colors: (
+    gray: $mygray,
+    blue: $myblue,
+    white: $mywhite,
+);
+
+$text-colors: (
+    blue: $myblue,
+);
+
+@function bg-color($color-name) {
+    @return map-get($bg-colors, $color-name)
+};
+
+@function text-color($color-name) {
+    @return map-get($text-colors, $color-name)
+};
+

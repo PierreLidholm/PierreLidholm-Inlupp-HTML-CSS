@@ -1,0 +1,154 @@
+@mixin mobile {
+    @media(min-width: #{$mobile}) {
+        @content
+    }
+};
+
+@mixin wide-mobile {
+    @media(min-width: #{$wide-mobile}) {
+        @content
+    }
+};
+
+@mixin small-tablet {
+    @media(min-width: #{$small-tablet}) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @media(min-width: #{$tablet}) {
+        @content
+    }
+};
+
+@mixin desktop {
+    @media(min-width: #{$desktop}) {
+        @content
+    }
+};
+
+@mixin wide-desktop {
+    @media(min-width: #{$wide-desktop}) {
+        @content
+    }
+};
+
+
+@mixin standardSettings() {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin jumbotronSettings() {
+    background-color: bg-color(white);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid bg-color(gray);
+}
+
+@mixin smallPictures() {
+    width: 30px;
+    padding-bottom: 10px;
+
+    @include wide-mobile {
+        width: 40px;
+    }
+
+    @include tablet {
+        width: 50px;
+    }
+}
+
+@mixin smallText {
+    h1 {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+}
+
+@mixin headlines {
+    font-size: 1.5rem;
+    width: 250px;
+    padding-bottom: 10px;
+
+    @include wide-mobile {
+        width: 500px;
+    }
+
+    @include small-tablet {
+        font-size: 1.4rem
+    }
+
+    @include tablet {
+        width: 700px;
+        font-size: 1.8rem;
+    }
+}
+
+@mixin features {
+    display: grid;
+    grid-column-gap: 1em;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 20% 80%;
+    margin-left: -20px;
+
+    img{
+        text-align: left;
+        grid-column: 1;
+        grid-row: 1/-1;
+    }
+
+    h1 {
+        margin: 5px 0 10px -105px;
+        grid-column: 2;
+        grid-row: 1;
+        padding-left: 1em;
+    }
+
+    p {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+        margin: 9px;
+    }
+}
+
+@mixin buttonStyling {
+    text-transform: uppercase;
+    color: white;
+    margin: auto;
+    font-size: 0.6rem;
+    font-weight: 500;
+    
+}
+
+@mixin info-containers{
+    
+    display: flex;
+    margin: auto;
+    
+    justify-content: left;
+    i {
+        margin: auto 0;
+    }
+    p {
+        margin: auto;
+    }
+    
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}  
+  }
